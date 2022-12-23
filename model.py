@@ -15,7 +15,7 @@ dataset['test_score(out of 10)'].fillna(dataset['test_score(out of 10)'].mean(),
 
 X = dataset.iloc[:, :3]
 
-# convert the strings into interger values
+# convert the strings into integer values
 def convert_str_to_int(word):
     word_dict = {'zero': 0, 'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10,
                  'eleven':11, 'twelve':12, 0: 0}
@@ -33,9 +33,11 @@ regressor = LinearRegression()
 # fitting model with training data
 regressor.fit(X,y)
 
-# dump this model into pkl file
+# dump this model into pkl file to save
 pickle.dump(regressor, open('model.pkl', 'wb'))
 
 # load model to compare the results
 model = pickle.load(open('model.pkl', 'rb'))
+
+# predict the result by loading on the model.plk
 print(model.predict([[2, 9, 6]]))
