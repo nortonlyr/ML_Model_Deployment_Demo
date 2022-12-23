@@ -27,7 +27,7 @@ y = dataset.iloc[:, -1]
 
 # In this small dataset, the entire data will be trained, no splitting training and test set
 
-# sklean linear gresion model 
+# sklean linear regression model
 regressor = LinearRegression()
 
 # fitting model with training data
